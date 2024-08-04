@@ -77,13 +77,7 @@ const Technology = () => {
     document.documentElement.style.setProperty("--bg-image", `url(/assets/technology/${bgImage}) no-repeat`);
   }, [innerWidth])
 
-  useEffect(() => {
-    const appInner  = document.querySelector(".app-inner") as HTMLElement
 
-    if (appInner) {
-      appInner.style.background = `url(/assets/technology/${bgImage}) no-repeat`;
-    }
-  }, [])
 
   return (
     <div className='technology'>

@@ -14,14 +14,7 @@ const Crew = () => {
   const imageRef = useRef<HTMLImageElement | null>(null);
   const dotsRef = useRef<HTMLUListElement | null>(null);
 
-  useEffect(() => {
-    const appInner  = document.querySelector(".app-inner") as HTMLElement
 
-    console.log(appInner)
-    if (appInner) {
-      appInner.style.background = `url(/assets/crew/${bgImage}) no-repeat`;
-    }
-  }, [])
 
   useEffect(() => {
     const tl = gsap.timeline();
