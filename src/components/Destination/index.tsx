@@ -43,7 +43,9 @@ const Destination = () => {
 
     if (imageRef.current) {
       const tl = gsap.timeline();
-
+      const img = new Image();
+      if (currentTab)
+        img.src = currentTab.images.png;
 
       // Start animation
       tl.fromTo(
@@ -70,44 +72,21 @@ const Destination = () => {
 
 
   useEffect(() => {
-    const img = new Image();
-    if (currentTab)
-    img.src = currentTab.images.png;
 
 
-    img.onload = () => {
-      if (imageRef.current) {
-        const tl = gsap.timeline();
-        tl.fromTo(
-          imageRef.current,
-          { scale: 0.8, rotateX: 0, rotateY: 0, rotateZ: 0 },
-          {
-            scale: 1,
-            opacity: 1,
-            rotateX: 10,
-            rotateY: 10,
-            rotateZ: 10,
-            duration: 2,
-            ease: 'circ.out',
-          }
-        );
-      }
-    };
+    if (tabs.current) {
+      const tl = gsap.timeline();
 
+      tl.fromTo(
+        tabs.current,
+        {opacity: 0, y: 8},
+        {opacity: 1, y: 0, duration: 1, ease: "cubic-bezier(.25,.46,.45,.94)", stagger: 0.4}
+      );
 
-    // if (tabs.current) {
-    //   const tl = gsap.timeline();
-    //
-    //   tl.fromTo(
-    //     tabs.current,
-    //     {opacity: 0, y: 8},
-    //     {opacity: 1, y: 0, duration: 1, ease: "cubic-bezier(.25,.46,.45,.94)", stagger: 0.4}
-    //   );
-    //
-    //   return () => {
-    //     tl.kill(); // Cleanup timeline on component unmount
-    //   };
-    // }
+      return () => {
+        tl.kill(); // Cleanup timeline on component unmount
+      };
+    }
   }, []);
 
   return (
