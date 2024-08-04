@@ -5,7 +5,7 @@ body { font-family: var(--Barlow-font), sans-serif; color: var(--white);backgrou
 
 .header { display: flex; align-items: center; justify-content: space-between;position: fixed; top: 20px; left: 0; right: 10px; z-index: 1;}
 .header .logo { cursor: pointer; position: relative; display: flex; margin-inline-start: 55px;}
-.header .logo:after { content:""; position: absolute; top: 50%; left: calc(100% + 64px); width: 473px; height: 1px; background-color: #979797; z-index: 1;}
+.header .logo:after { content:""; position: absolute; top: 50%; left: calc(100% + 64px); width: 473px; height: 1px; background-color: #979797; z-index: 1;pointer-events: none}
 .nav { padding: 30px 140px; background: rgba(255,255,255,5%); backdrop-filter: blur(10px);-webkit-backdrop-filter: blur(10px);}
 .nav .list { display: flex; gap: 18px;}
 .nav .list .list-item > a { padding: 10px; letter-spacing: 1px; color: var(--white); display: flex; gap: 10px; position: relative;}
