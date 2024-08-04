@@ -43,13 +43,13 @@ const Destination = () => {
     if (imageRef.current) {
       const img = new Image();
       if (currentTab)
-      img.src = currentTab.images.png;
+        img.src = currentTab.images.png;
       const tl = gsap.timeline();
 
       img.onload = () => {
         tl.fromTo(
           imageRef.current,
-          { opacity: 0, scale: 0.8, rotateX: 0, rotateY: 0, rotateZ: 0 },
+          {opacity: 0, scale: 0.8, rotateX: 0, rotateY: 0, rotateZ: 0},
           {
             scale: 1,
             opacity: 1,
@@ -63,10 +63,10 @@ const Destination = () => {
       };
 
       return () => {
-        tl.kill(); // Cleanup
+        tl.kill();
       };
     }
-  }, [currentTab, activeTab]);
+  }, [activeTab]);
 
 
   useEffect(() => {
