@@ -43,11 +43,13 @@ const Destination = () => {
     if (imageRef.current) {
       const tl = gsap.timeline();
 
-      tl.fromTo(
+      tl.set(imageRef.current, { opacity: 0 })
+        .fromTo(
         imageRef.current,
         { scale: 0.8, rotateX: 0, rotateY: 0, rotateZ: 0 },
         {
           scale: 1,
+          opacity:1,
           rotateX: 10,
           rotateY: 10,
           rotateZ: 10,
