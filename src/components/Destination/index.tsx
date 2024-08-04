@@ -40,33 +40,33 @@ const Destination = () => {
   }, [activeTab]);
   window.gsap = gsap
   useEffect(() => {
-
     if (imageRef.current) {
-      const tl = gsap.timeline();
+      const img = new Image();
+      if (currentTab)
+      img.src = currentTab.images.png;
 
-
-      // Start animation
-      tl.fromTo(
-        imageRef.current,
-        {opacity:0,scale: 0.8, rotateX: 0, rotateY: 0, rotateZ: 0},
-        {
-          scale: 1,
-          opacity: 1,
-          rotateX: 10,
-          rotateY: 10,
-          rotateZ: 10,
-          duration: 2,
-          ease: "circ.out"
-        }
-      );
+      img.onload = () => {
+        const tl = gsap.timeline();
+        tl.fromTo(
+          imageRef.current,
+          { opacity: 0, scale: 0.8, rotateX: 0, rotateY: 0, rotateZ: 0 },
+          {
+            scale: 1,
+            opacity: 1,
+            rotateX: 10,
+            rotateY: 10,
+            rotateZ: 10,
+            duration: 2,
+            ease: "circ.out",
+          }
+        );
+      };
 
       return () => {
-        tl.kill(); // Cleanup timeline on component unmount or when activeTab changes
+        gsap.killTweensOf(imageRef.current); // Cleanup
       };
     }
-
-
-  }, [activeTab]);
+  }, [currentTab, activeTab]);
 
 
   useEffect(() => {
