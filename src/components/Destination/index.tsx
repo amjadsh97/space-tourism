@@ -38,13 +38,11 @@ const Destination = () => {
       };
     }
   }, [activeTab]);
-
+  window.gsap = gsap
   useEffect(() => {
     if (imageRef.current) {
       const tl = gsap.timeline();
 
-      // Ensure the image is hidden initially
-      gsap.set(imageRef.current, { opacity: 0 });
 
       // Start animation
       tl.fromTo(
@@ -68,46 +66,21 @@ const Destination = () => {
   }, [activeTab]);
 
 
-  // useEffect(() => {
-  //   if (tabs.current) {
-  //     const tl = gsap.timeline();
-  //
-  //     tl.fromTo(
-  //       tabs.current,
-  //       { opacity: 0, y: 8 },
-  //       { opacity: 1, y: 0, duration: 1, ease: "cubic-bezier(.25,.46,.45,.94)", stagger: 0.4 }
-  //     );
-  //
-  //     return () => {
-  //       tl.kill(); // Cleanup timeline on component unmount
-  //     };
-  //   }
-  // }, []);
-
-  const handleImageLoad = () => {
-    if (imageRef.current) {
+  useEffect(() => {
+    if (tabs.current) {
       const tl = gsap.timeline();
 
-      // Start animation after image has loaded
       tl.fromTo(
-        imageRef.current,
-        { scale: 0.8, rotateX: 0, rotateY: 0, rotateZ: 0 },
-        {
-          scale: 1,
-          opacity: 1,
-          rotateX: 10,
-          rotateY: 10,
-          rotateZ: 10,
-          duration: 2,
-          ease: "circ.out"
-        }
+        tabs.current,
+        { opacity: 0, y: 8 },
+        { opacity: 1, y: 0, duration: 1, ease: "cubic-bezier(.25,.46,.45,.94)", stagger: 0.4 }
       );
 
       return () => {
-        tl.kill(); // Cleanup timeline on component unmount or when activeTab changes
+        tl.kill(); // Cleanup timeline on component unmount
       };
     }
-  };
+  }, []);
 
   return (
     <div className='destination'>
@@ -115,7 +88,7 @@ const Destination = () => {
       <div className="destination-content">
         {currentTab && (
           <div className="preview">
-            <div className="image-wrapper" ref={imageRef} onLoad={handleImageLoad}>
+            <div className="image-wrapper" ref={imageRef}>
               <img src={currentTab.images.png} alt="" />
             </div>
             <div className="preview-details">
