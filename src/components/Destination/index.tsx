@@ -46,7 +46,7 @@ const Destination = () => {
       img.src = currentTab.images.png;
       const tl = gsap.timeline();
 
-      //img.onload = () => {
+      img.onload = () => {
         tl.fromTo(
           imageRef.current,
           { opacity: 0, scale: 0.8, rotateX: 0, rotateY: 0, rotateZ: 0 },
@@ -60,7 +60,7 @@ const Destination = () => {
             ease: "circ.out",
           }
         );
-      //};
+      };
 
       return () => {
         tl.kill(); // Cleanup
