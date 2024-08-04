@@ -65,7 +65,7 @@ const Destination = () => {
         };
       }
 
-    },200)
+    },500)
   }, [activeTab]);
 
 
