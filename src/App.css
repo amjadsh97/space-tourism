@@ -1,4 +1,4 @@
-:root { --black: #0B0D17; --purple:#D0D6F9; --white:#fff; --Belle-font: "Bellefair"; --Barlow-font:"Barlow"; --bg-home:'public/assets/home/background-home-desktop.jpg'; --bg-destination:'public/assets/home/background-home-desktop.jpg'; --bg-crew:'public/assets/home/background-home-desktop.jpg'; --bg-technology:'public/assets/home/background-home-desktop.jpg'; --bg-image: url(/public/assets/destination/background-destination-desktop.jpg) no-repeat;}
+:root { --black: #0B0D17; --purple:#D0D6F9; --white:#fff; --Belle-font: "Bellefair"; --Barlow-font:"Barlow"; --bg-home:'public/assets/home/background-home-desktop.jpg'; --bg-destination:'public/assets/home/background-home-desktop.jpg'; --bg-crew:'public/assets/home/background-home-desktop.jpg'; --bg-technology:'public/assets/home/background-home-desktop.jpg'; --bg-image: url(/assets/destination/background-destination-desktop.jpg) no-repeat;}
 
 h1,h2, h3, h4,h5 {font-weight: 400}
 body { font-family: var(--Barlow-font), sans-serif; color: var(--white);background-color: #0b0d19;}

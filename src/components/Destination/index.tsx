@@ -13,7 +13,7 @@ const Destination = () => {
   const tabs = useRef<HTMLUListElement | null>(null);
 
   useEffect(() => {
-    document.documentElement.style.setProperty("--bg-image", `url(/public/assets/destination/${bgImage}) no-repeat`);
+    document.documentElement.style.setProperty("--bg-image", `url(/assets/destination/${bgImage}) no-repeat`);
   }, [bgImage]);
 
   useEffect(() => {
@@ -88,7 +88,7 @@ const Destination = () => {
     const appInner  = document.querySelector(".app-inner") as HTMLElement
 
     if (appInner) {
-      appInner.style.background = `url(/public/assets/destination/${bgImage}) no-repeat`;
+      appInner.style.background = `url(/assets/destination/${bgImage}) no-repeat`;
     }
   }, [])
 

@@ -19,7 +19,7 @@ const Crew = () => {
 
     console.log(appInner)
     if (appInner) {
-      appInner.style.background = `url(/public/assets/crew/${bgImage}) no-repeat`;
+      appInner.style.background = `url(/assets/crew/${bgImage}) no-repeat`;
     }
   }, [])
 

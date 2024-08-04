@@ -74,14 +74,14 @@ const Technology = () => {
   }, []);
 
   useEffect(() => {
-    document.documentElement.style.setProperty("--bg-image", `url(/public/assets/technology/${bgImage}) no-repeat`);
+    document.documentElement.style.setProperty("--bg-image", `url(/assets/technology/${bgImage}) no-repeat`);
   }, [innerWidth])
 
   useEffect(() => {
     const appInner  = document.querySelector(".app-inner") as HTMLElement
 
     if (appInner) {
-      appInner.style.background = `url(/public/assets/technology/${bgImage}) no-repeat`;
+      appInner.style.background = `url(/assets/technology/${bgImage}) no-repeat`;
     }
   }, [])
 
