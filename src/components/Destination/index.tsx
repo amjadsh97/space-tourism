@@ -44,9 +44,9 @@ const Destination = () => {
       const img = new Image();
       if (currentTab)
       img.src = currentTab.images.png;
+      const tl = gsap.timeline();
 
       img.onload = () => {
-        const tl = gsap.timeline();
         tl.fromTo(
           imageRef.current,
           { opacity: 0, scale: 0.8, rotateX: 0, rotateY: 0, rotateZ: 0 },
@@ -63,7 +63,7 @@ const Destination = () => {
       };
 
       return () => {
-        gsap.killTweensOf(imageRef.current); // Cleanup
+        tl.kill(); // Cleanup
       };
     }
   }, [currentTab, activeTab]);
