@@ -17,6 +17,10 @@ const Crew = () => {
 
 
   useEffect(() => {
+    document.documentElement.style.setProperty("--bg-image", `url(/assets/crew/${bgImage}) no-repeat`);
+  }, [bgImage]);
+
+  useEffect(() => {
     const tl = gsap.timeline();
 
     // Animation for the active tab
