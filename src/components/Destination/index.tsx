@@ -1,6 +1,6 @@
-import { useEffect, useRef, useState } from "react";
+import {useEffect, useRef, useState} from "react";
 import data from "../../data.json";
-import { gsap } from "gsap";
+import {gsap} from "gsap";
 
 const Destination = () => {
   const [activeTab, setActiveTab] = useState<string>("Moon");
@@ -26,11 +26,11 @@ const Destination = () => {
       const tl = gsap.timeline();
 
       // Hide previous content immediately
-      tl.set([destinationName.current, destinationDescription.current, ...Array.from(previewValues.current.children || [])], { opacity: 0 })
+      tl.set([destinationName.current, destinationDescription.current, ...Array.from(previewValues.current.children || [])], {opacity: 0})
         .fromTo(
           [destinationName.current, destinationDescription.current, ...Array.from(previewValues.current.children || [])],
-          { opacity: 0, y: 8 },
-          { opacity: 1, y: 0, duration: 2, ease: "cubic-bezier(.25,.46,.45,.94)", stagger: 0.4 }
+          {opacity: 0, y: 8},
+          {opacity: 1, y: 0, duration: 2, ease: "cubic-bezier(.25,.46,.45,.94)", stagger: 0.4}
         );
 
       return () => {
@@ -40,32 +40,32 @@ const Destination = () => {
   }, [activeTab]);
   window.gsap = gsap
   useEffect(() => {
-    setTimeout(() => {
-      if (imageRef.current) {
-        const tl = gsap.timeline();
+
+    if (imageRef.current) {
+      const tl = gsap.timeline();
 
 
-        // Start animation
-        tl.fromTo(
-          imageRef.current,
-          { scale: 0.8, rotateX: 0, rotateY: 0, rotateZ: 0 },
-          {
-            scale: 1,
-            opacity: 1,
-            rotateX: 10,
-            rotateY: 10,
-            rotateZ: 10,
-            duration: 2,
-            ease: "circ.out"
-          }
-        );
+      // Start animation
+      tl.fromTo(
+        imageRef.current,
+        {scale: 0.8, rotateX: 0, rotateY: 0, rotateZ: 0},
+        {
+          scale: 1,
+          opacity: 1,
+          rotateX: 10,
+          rotateY: 10,
+          rotateZ: 10,
+          duration: 2,
+          ease: "ease-in"
+        }
+      );
 
-        return () => {
-          tl.kill(); // Cleanup timeline on component unmount or when activeTab changes
-        };
-      }
+      return () => {
+        tl.kill(); // Cleanup timeline on component unmount or when activeTab changes
+      };
+    }
 
-    },500)
+
   }, [activeTab]);
 
 
@@ -75,8 +75,8 @@ const Destination = () => {
 
       tl.fromTo(
         tabs.current,
-        { opacity: 0, y: 8 },
-        { opacity: 1, y: 0, duration: 1, ease: "cubic-bezier(.25,.46,.45,.94)", stagger: 0.4 }
+        {opacity: 0, y: 8},
+        {opacity: 1, y: 0, duration: 1, ease: "cubic-bezier(.25,.46,.45,.94)", stagger: 0.4}
       );
 
       return () => {
@@ -92,7 +92,7 @@ const Destination = () => {
         {currentTab && (
           <div className="preview">
             <div className="image-wrapper" ref={imageRef}>
-              <img src={currentTab.images.png} alt="" />
+              <img src={currentTab.images.png} alt=""/>
             </div>
             <div className="preview-details">
               <ul ref={tabs} className="tabs">
