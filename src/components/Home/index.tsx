@@ -39,6 +39,14 @@ const Home = ({handleExplore}:HomeProps) => {
     document.documentElement.style.setProperty("--bg-image", `url(/public/assets/home/${bgImage}) no-repeat`);
   }, [innerWidth])
 
+  useEffect(() => {
+    const appInner  = document.querySelector(".app-inner") as HTMLElement
+
+    if (appInner) {
+      appInner.style.background = `url(/public/assets/home/${bgImage}) no-repeat`;
+    }
+  }, [])
+
   return (
     <div className='home'>
       <div className="home-content">

@@ -84,6 +84,14 @@ const Destination = () => {
     };
   }, []);
 
+  useEffect(() => {
+    const appInner  = document.querySelector(".app-inner") as HTMLElement
+
+    if (appInner) {
+      appInner.style.background = `url(/public/assets/destination/${bgImage}) no-repeat`;
+    }
+  }, [])
+
   return (
     <div className='destination'>
       <h2 className='content-title'><span>01</span> Pick your destination</h2>
