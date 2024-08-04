@@ -38,7 +38,7 @@ const Destination = () => {
       };
     }
   }, [activeTab]);
-  window.gsap = gsap
+
   useEffect(() => {
     if (imageRef.current) {
       const img = new Image();
