@@ -15,7 +15,6 @@ const Crew = () => {
   const dotsRef = useRef<HTMLUListElement | null>(null);
 
 
-
   useEffect(() => {
     document.documentElement.style.setProperty("--bg-image", `url(/assets/crew/${bgImage}) no-repeat`);
   }, [bgImage]);
@@ -40,16 +39,22 @@ const Crew = () => {
     const tl = gsap.timeline();
 
     if (imageRef.current) {
-      tl.fromTo(
-        imageRef.current,
-        {y: -10, opacity: 0},
-        {
-          opacity: 1,
-          y: 0,
-          duration: 2, // Adjust duration for smoother animation
-          ease: "ease"
-        }
-      );
+      const img = new Image();
+      if (currentTab){
+        img.src = currentTab.images.png;
+      }
+      img.onload = () => {
+        tl.fromTo(
+          imageRef.current,
+          {y: -10, opacity: 0},
+          {
+            opacity: 1,
+            y: 0,
+            duration: 2, // Adjust duration for smoother animation
+            ease: "ease"
+          }
+        );
+      }
     }
 
     return () => {
@@ -63,8 +68,8 @@ const Crew = () => {
     tl.fromTo(
       dotsRef.current,
       {opacity: 0, y: 8,},
-      {opacity: 1, y: 0,duration: 1,delay:2, ease: "cubic-bezier(.25,.46,.45,.94)", stagger: 0.4}
-    ,'>')
+      {opacity: 1, y: 0, duration: 1, delay: 2, ease: "cubic-bezier(.25,.46,.45,.94)", stagger: 0.4}
+      , '>')
 
     return () => {
       tl.kill();
