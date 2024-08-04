@@ -32,24 +32,25 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: https://github.com/amjadsh97/memory-game
-- Live Site URL: https://memory-game-lake-eta.vercel.app/
+- Solution URL: https://github.com/amjadsh97/space-tourism
+- Live Site URL: https://space-tourism-psi-wine.vercel.app/
 
 ## My process
 
 ### Built with
 
 - Semantic HTML5 markup
-- CSS custom properties
+- CSS
 - Flexbox
+- Typescript
 - [React](https://reactjs.org/) - JS library
 
 
 ### What I Learned
-I learned how to manage complex application state effectively using useReducer and the React Context API.
+I learn how to make websites with smooth animations.
 
 ### Continued Development
-I plan to develop a more complex application to further hone my skills.
+I plan to develop a more complex animation to improve my skills.
 
 ### Useful resources
 - [React Docs](https://react.dev/) - This helped me for building react components. I really liked using this docs.

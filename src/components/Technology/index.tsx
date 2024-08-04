@@ -77,8 +77,6 @@ const Technology = () => {
     document.documentElement.style.setProperty("--bg-image", `url(/assets/technology/${bgImage}) no-repeat`);
   }, [innerWidth])
 
-
-
   return (
     <div className='technology'>
       <div className="crew-wrapper">
